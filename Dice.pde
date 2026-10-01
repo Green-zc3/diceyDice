@@ -9,8 +9,8 @@
       background(19,106,83);
       
       for(int x = 10; x<500; x+= 60){
-        for (int y = 10; y<500; y+=60)
-          Die diceyOne = new Die (x,y);
+        for (int y = 10; y<500; y+=55)
+           diceyOne = new Die (x,y);
       
       diceyOne.show();
       }
