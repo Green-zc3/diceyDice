@@ -1,44 +1,47 @@
-     Die diceyOne;
-     int rollyRoll; 
-        void setup()
-  {  size (500,500);
-    diceyOne = new Die (50,50);
-
+  void setup()
+  {  size (500,530);
+      noLoop(); 
   }
+  
   void draw()
   {
       background(19,106,83);
       
-      for(int x = 10; x<500; x+= 60){
-        for (int y = 10; y<500; y+=55)
-           diceyOne = new Die (x,y);
-      
-      diceyOne.show();
-      }
+      for(int x = 17; x<450; x+= 60) {
+        for (int y = 25; y<450; y+=60) {
+           Die diceyOne = new Die (x,y);
+           diceyOne.show();
+        }
+     }
+    // int sum = 
+     fill(255,255,255);
+     text("Total:",210,520);
   }
+  
   void mousePressed()
   {
       redraw();
   }
+  
   class Die //models one single dice cube
   {
-      int mySize, myX, myY;
+      int mySize, myX, myY, rollyRoll;
       
       Die(int x, int y) //constructor
       {
          mySize = 50;
          myX = x;
          myY = y;
+         rollyRoll = ((int)(Math.random()*6)+1); 
       }
+      
       void roll()
       {
-               
-          rollyRoll = ((int) (Math.random()*7-1));
+          rollyRoll = ((int) (Math.random()*6)+1);
       }
+      
       void show()
       {
-        
-      
           noStroke();
           fill(252,240,207);
           
@@ -98,5 +101,5 @@
           ellipse(myX+36,myY+25,10,10);
           }
       }
-      }
+
   }
