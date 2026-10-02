@@ -31,44 +31,51 @@
       }
       void roll()
       {
-          //your code here
+               
+          rollyRoll = ((int) (Math.random()*7-1));
       }
       void show()
       {
         
-        //1 dot
+      
           noStroke();
           fill(252,240,207);
+          
+          // 1 dot
+        if (rollyRoll == 1) {
           rect(myX, myY, mySize, mySize);
           fill(0,0,0);
           ellipse(myX+25,myY+25,10,10); 
-         
+        }
        //2 dots
-          fill(252,240,207);
+         else if (rollyRoll ==2){
           rect(myX, myY, mySize, mySize);
           fill(0,0,0);
           ellipse(myX+13,myY+35,10,10);
           ellipse(myX+36,myY+12,10,10);
-          
+         }
+         
        // 3 dots
-          fill(252,240,207);
+          else if (rollyRoll ==3){
           rect(myX, myY, mySize, mySize);
           fill(0,0,0);
           ellipse(myX+13,myY+35,10,10);
           ellipse(myX+24,myY+24,10,10);
           ellipse(myX+36,myY+12,10,10);
+          }
           
         // 4 dots
-          fill(252,240,207);
+          else if(rollyRoll == 4){
           rect(myX, myY, mySize, mySize);
           fill(0,0,0);
           ellipse(myX+13,myY+35,10,10);
           ellipse(myX+13,myY+12,10,10);
           ellipse(myX+36,myY+12,10,10);
           ellipse(myX+36,myY+35, 10,10);
+          }
           
         // 5 dots
-          fill(252,240,207);
+          else if (rollyRoll == 5){
           rect(myX, myY, mySize, mySize);
           fill(0,0,0);
           ellipse(myX+13,myY+35,10,10);
@@ -76,9 +83,10 @@
           ellipse(myX+36,myY+12,10,10);
           ellipse(myX+36,myY+35, 10,10);
           ellipse(myX+25,myY+25,10,10);
+          }
           
         // 6 dots
-          fill(252,240,207);
+          else if (rollyRoll == 6){
           rect(myX, myY, mySize, mySize);
           fill(0,0,0);
           ellipse(myX+13,myY+40,10,10);
@@ -87,5 +95,7 @@
           ellipse(myX+36,myY+40, 10,10);
           ellipse(myX+13,myY+25,10,10);
           ellipse(myX+36,myY+25,10,10);
+          }
+      }
       }
   }
