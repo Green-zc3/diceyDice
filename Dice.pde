@@ -1,4 +1,5 @@
      Die diceyOne;
+     int rollyRoll; 
         void setup()
   {  size (500,500);
     diceyOne = new Die (50,50);
