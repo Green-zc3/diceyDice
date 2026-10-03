@@ -1,3 +1,6 @@
+  int[] dice = {1,2,3,4,5,6};
+  int sum;
+  
   void setup()
   {  size (500,530);
       noLoop(); 
@@ -5,22 +8,27 @@
   
   void draw()
   {
+    
       background(19,106,83);
       
+      sum = 0;
       for(int x = 17; x<450; x+= 60) {
         for (int y = 25; y<450; y+=60) {
            Die diceyOne = new Die (x,y);
            diceyOne.show();
+      sum = sum + diceyOne.rollyRoll;
         }
      }
-    // int sum = 
-     fill(255,255,255);
-     text("Total:",210,520);
+     fill (255,255,255);
+     text("Total: " + sum, 210,520);
+
   }
   
   void mousePressed()
   {
       redraw();
+      
+    
   }
   
   class Die //models one single dice cube
@@ -38,7 +46,9 @@
       void roll()
       {
           rollyRoll = ((int) (Math.random()*6)+1);
+    
       }
+      
       
       void show()
       {
